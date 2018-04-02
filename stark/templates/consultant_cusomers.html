@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/static/bootstrap-3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+<h3>公共资源</h3>
+
+
+<div class="container">
+    <div class="row">
+        <table class="table table-bordered table-hover">
+             <thead>
+                   <tr>
+                       <th>ID</th>
+                       <th>客户姓名</th>
+                       <th>课程顾问</th>
+                       <th>跟进日期</th>
+                       <th>状态</th>
+                   </tr>
+             </thead>
+
+            <tbody>
+                  {% for customer_distrbute in customer_distrbute_list %}
+
+                       <tr>
+                             <td>{{ customer_distrbute.pk }}</td>
+                             <td>{{ customer_distrbute.customer.name }}</td>
+                             <td>{{ customer_distrbute.consultant.name }}</td>
+                             <td>{{ customer_distrbute.date }}</td>
+                             <td>{{ customer_distrbute.get_status_display }}</td>
+
+                       </tr>
+                  {% endfor %}
+
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+</body>
+</html>
